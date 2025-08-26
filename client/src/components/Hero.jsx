@@ -25,7 +25,7 @@ export default function Hero() {
       </style>
 
       {/* Left Content */}
-      <div className="flex-1 flex flex-col justify-center px-6 md:px-16 text-center md:text-left z-10 fadeIn">
+      <div className="flex-1 flex flex-col justify-center px-6 md:px-30 text-center md:text-left z-10 fadeIn min-h-[600px]">
         <h1 className="text-[50px] md:text-[80px] font-semibold leading-tight mb-6 text-[#16182F]">
           Nehru Kuppusamy, <br className="hidden md:block" />
           <span className="text-[#0A1944]">
@@ -50,7 +50,7 @@ export default function Hero() {
         <img
           src={heroimage}
           alt="Nehru Kuppusamy"
-          className="w-full h-full max-h-[700px] object-contain rounded-xl shadow-lg"
+          className="w-full h-full max-h-[700px] object-contain"
         />
       </div>
     </section>
