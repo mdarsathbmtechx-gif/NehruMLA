@@ -1,7 +1,7 @@
 // src/components/About.jsx
 import React from "react";
 
-export default function About() {
+export default function Aboutsection() {
   return (
     <section id="about" className="py-16 bg-gray-50">
       <div className="max-w-7xl mx-auto px-6 md:px-12 text-center md:text-left">
