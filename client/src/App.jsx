@@ -1,24 +1,19 @@
 import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
-import Banner from "./components/Banner";
-import Hero from "./components/Hero";
-import Works from "./components/Works";
-import About from "./components/About";
-import Footer from "./components/Footer";
-import Actions from "./components/Actions";
+import About from "./Pages/About";
+import Home from "./Pages/Home";
+import Join from "./Pages/Join";
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
+    <Router>
       <Navbar />
-      <Banner />
-      <Hero />
-      <Actions/>
-      {/* <Works /> */}
-      <About />
-      <Footer />
-    </div>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/join" element={<Join />} />
+      </Routes>
+    </Router>
   );
 }
-
-export default App;

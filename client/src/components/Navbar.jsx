@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { Link } from "react-scroll"; // Smooth scrolling
 import { HiMenu, HiX } from "react-icons/hi";
 import logo from "../assets/NEYAM.png";
+import { Link as RouterLink } from "react-router-dom";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -56,14 +57,14 @@ export default function Navbar() {
 
             {/* CTA Button (logo navy blue) */}
             <Link
-              to="join"
-              smooth={true}
-              duration={500}
-              offset={-64}
+              to="/join"
               className="bg-[#0A1944] text-white px-5 py-2 rounded-lg font-semibold shadow-md hover:bg-[#142c6a] transition cursor-pointer"
+              as={RouterLink}
             >
               Join Now
             </Link>
+
+
           </div>
 
           {/* Mobile Menu Button */}
