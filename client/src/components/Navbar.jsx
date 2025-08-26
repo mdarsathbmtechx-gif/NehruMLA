@@ -56,14 +56,13 @@ export default function Navbar() {
             ))}
 
             {/* CTA Button (logo navy blue) */}
-            <Link
+            {/* Desktop Join Button */}
+            <RouterLink
               to="/join"
-              className="bg-[#0A1944] text-white px-5 py-2 rounded-lg font-semibold shadow-md hover:bg-[#142c6a] transition cursor-pointer"
-              as={RouterLink}
+              className="bg-[#0A1944] text-white px-5 py-2 rounded-lg font-semibold shadow-md hover:bg-[#142c6a] transition"
             >
               Join Now
-            </Link>
-
+            </RouterLink>
 
           </div>
 
