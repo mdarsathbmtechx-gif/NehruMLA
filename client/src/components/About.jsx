@@ -8,7 +8,7 @@ const Aboutsection =() => {
         <h2 className="text-4xl font-extrabold text-gray-900 mb-6">
           About <span className="text-blue-900">Neyam</span>
         </h2>
-        <p className="text-lg text-gray-700 leading-relaxed mb-6">
+        <p className="text-lg text-gray-700 leading-relaxed mb-6">       
           Neyam is dedicated to empowering communities and building a stronger,
           sustainable Puducherry. Through innovative programs and initiatives,
           we strive to create positive social impact and lasting change.
