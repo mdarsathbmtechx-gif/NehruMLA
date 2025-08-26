@@ -1,8 +1,8 @@
-// src/pages/Join.jsx
+// src/pages/section.jsx
 import React, { useRef, useState } from "react";
 import jsPDF from "jspdf";
 
-export default function Join() {
+export default function Joinsection() {
   const formRef = useRef();
   const [photo, setPhoto] = useState(null);
 
@@ -67,7 +67,7 @@ export default function Join() {
 
   return (
     <div className="min-h-screen px-6 md:px-16 py-20 bg-gray-100">
-      <h1 className="text-4xl font-bold text-[#16182F] mb-8">Join Our Party</h1>
+      <h1 className="text-4xl font-bold text-[#16182F] mb-8">section Our Party</h1>
       <form ref={formRef} className="flex flex-col max-w-md gap-4 bg-white p-6 rounded-xl shadow-lg">
         <input
           type="text"

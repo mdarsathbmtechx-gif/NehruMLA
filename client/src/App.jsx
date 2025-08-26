@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Aboutsection from "./components/About";
 import Home from "./Pages/Home";
-import Join from "./Pages/Join";
+import Joinsection from "./Pages/Join";
 
 export default function App() {
   return (
@@ -12,7 +12,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<Aboutsection />} />
-        <Route path="/join" element={<Join />} />
+        <Route path="/join" element={<Joinsection />} />
       </Routes>
     </Router>
   );
