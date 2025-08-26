@@ -1,9 +1,9 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
-import Join from "./Pages/Join";
 import Aboutsection from "./components/About";
 import Home from "./Pages/Home";
+import Join from "./Pages/Join";
 
 export default function App() {
   return (
