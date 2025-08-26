@@ -5,7 +5,7 @@ import { HiMenu, HiX } from "react-icons/hi";
 import logo from "../assets/NEYAM.png";
 import { Link as RouterLink } from "react-router-dom";
 
-export default function Navbar() {
+const Navbar=() =>{
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => setIsOpen(!isOpen);
@@ -110,3 +110,5 @@ export default function Navbar() {
     </nav>
   );
 }
+
+export default Navbar
