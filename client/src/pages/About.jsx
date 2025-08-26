@@ -1,7 +1,8 @@
 import React from "react";
+import Aboutsection from "../components/About";
 
-export default function About() {
-  return (
+const About=()=> {
+ return (
     <div className="min-h-screen px-6 md:px-16 py-20">
       <h1 className="text-4xl font-bold text-[#16182F] mb-6">About Us</h1>
       <p className="text-gray-700 text-lg">
@@ -11,3 +12,4 @@ export default function About() {
     </div>
   );
 }
+export default About;

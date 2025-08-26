@@ -2,7 +2,7 @@
 import React, { useRef, useState } from "react";
 import jsPDF from "jspdf";
 
-export default function Joinsection() {
+const Joinsection=()=> {
   const formRef = useRef();
   const [photo, setPhoto] = useState(null);
 
@@ -104,3 +104,6 @@ export default function Joinsection() {
     </div>
   );
 }
+
+
+export default Joinsection;

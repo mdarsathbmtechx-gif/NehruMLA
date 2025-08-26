@@ -5,7 +5,7 @@ import Actions from "../components/Actions";
 import LatestVideos from "../components/LatestVideos";
 import About from "../components/About";
 
-export default function Home() {
+const Home=()=> {
   return (
     <div>
       <Banner/>  
@@ -17,3 +17,4 @@ export default function Home() {
     </div>
   );
 }
+export default Home;
