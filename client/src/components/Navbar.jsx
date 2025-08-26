@@ -1,36 +1,37 @@
 // src/components/Navbar.jsx
 import React, { useState } from "react";
-import { Link } from "react-scroll"; // Smooth scrolling
+import { Link as RouterLink, useLocation } from "react-router-dom";
 import { HiMenu, HiX } from "react-icons/hi";
 import logo from "../assets/NEYAM.png";
-import { Link as RouterLink } from "react-router-dom";
 
-const Navbar=() =>{
+const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
-  const navItems = [
-    { name: "Home", link: "home" },
-    { name: "Gallery", link: "gallery" },
-    { name: "Contacts", link: "contact" },
-  ];
+  // Smooth scroll when hash changes
+  const { hash } = useLocation();
+  React.useEffect(() => {
+    if (hash) {
+      const element = document.getElementById(hash.replace("#", ""));
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  }, [hash]);
 
   return (
     <nav className="fixed top-0 w-full bg-white/90 backdrop-blur-md shadow-md z-50 font-josefin">
-      {/* Import Josefin Sans */}
       <style>
         {`
           @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600;700&display=swap');
-          .font-josefin {
-            font-family: 'Josefin Sans', sans-serif;
-          }
+          .font-josefin { font-family: 'Josefin Sans', sans-serif; }
         `}
       </style>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
-          {/* Logo only */}
+          {/* Logo */}
           <a
             href="https://neyampuducherry.com/"
             target="_blank"
@@ -42,28 +43,34 @@ const Navbar=() =>{
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-6">
-            {navItems.map((item) => (
-              <Link
-                key={item.name}
-                to={item.link}
-                smooth={true}
-                duration={500}
-                offset={-64}
-                className="cursor-pointer text-[#16182F] font-semibold hover:text-blue-600 transition"
-              >
-                {item.name}
-              </Link>
-            ))}
+            <RouterLink
+              to="/"
+              className="cursor-pointer text-[#16182F] font-semibold hover:text-blue-600 transition"
+            >
+              Home
+            </RouterLink>
 
-            {/* CTA Button (logo navy blue) */}
-            {/* Desktop Join Button */}
+            <RouterLink
+              to="/gallery"
+              className="cursor-pointer text-[#16182F] font-semibold hover:text-blue-600 transition"
+            >
+              Gallery
+            </RouterLink>
+
+            <RouterLink
+              to="/contact"
+              className="cursor-pointer text-[#16182F] font-semibold hover:text-blue-600 transition"
+            >
+              Contacts
+            </RouterLink>
+
+            {/* Join Button */}
             <RouterLink
               to="/join"
               className="bg-[#0A1944] text-white px-5 py-2 rounded-lg font-semibold shadow-md hover:bg-[#142c6a] transition"
             >
               Join Now
             </RouterLink>
-
           </div>
 
           {/* Mobile Menu Button */}
@@ -79,36 +86,43 @@ const Navbar=() =>{
       {isOpen && (
         <div className="md:hidden bg-white/95 backdrop-blur-md shadow-lg font-josefin">
           <div className="px-4 pt-4 pb-4 space-y-2">
-            {navItems.map((item) => (
-              <Link
-                key={item.name}
-                to={item.link}
-                smooth={true}
-                duration={500}
-                offset={-64}
-                className="block px-3 py-2 rounded-md text-[#16182F] font-semibold hover:bg-blue-50 hover:text-blue-600 transition"
-                onClick={() => setIsOpen(false)}
-              >
-                {item.name}
-              </Link>
-            ))}
+            <RouterLink
+              to="/#"
+              className="block px-3 py-2 rounded-md text-[#16182F] font-semibold hover:bg-blue-50 hover:text-blue-600 transition"
+              onClick={() => setIsOpen(false)}
+            >
+              Home
+            </RouterLink>
 
-            {/* CTA Button in Mobile (logo navy blue) */}
-            <Link
-              to="join"
-              smooth={true}
-              duration={500}
-              offset={-64}
-              className="block w-full text-center bg-[#0A1944] text-white px-5 py-2 rounded-lg font-semibold shadow-md hover:bg-[#142c6a] transition cursor-pointer"
+            <RouterLink
+              to="/#gallery"
+              className="block px-3 py-2 rounded-md text-[#16182F] font-semibold hover:bg-blue-50 hover:text-blue-600 transition"
+              onClick={() => setIsOpen(false)}
+            >
+              Gallery
+            </RouterLink>
+
+            <RouterLink
+              to="/#contact"
+              className="block px-3 py-2 rounded-md text-[#16182F] font-semibold hover:bg-blue-50 hover:text-blue-600 transition"
+              onClick={() => setIsOpen(false)}
+            >
+              Contacts
+            </RouterLink>
+
+            {/* Join Button in Mobile */}
+            <RouterLink
+              to="/join"
+              className="block w-full text-center bg-[#0A1944] text-white px-5 py-2 rounded-lg font-semibold shadow-md hover:bg-[#142c6a] transition"
               onClick={() => setIsOpen(false)}
             >
               Join Now
-            </Link>
+            </RouterLink>
           </div>
         </div>
       )}
     </nav>
   );
-}
+};
 
-export default Navbar
+export default Navbar;
